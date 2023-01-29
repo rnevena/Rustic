@@ -19,7 +19,7 @@
     $rezultat_msg = $stmt_msg->execute();
     $messages = $stmt_msg->fetchAll();
     
-    $query_ord = "SELECT u.fullname as fullname, o.id_o as id_o, o.total as total, o.o_date as datee FROM orders o INNER JOIN user u ON o.id_u=u.id_u";
+    $query_ord = "SELECT u.fullname as fullname, o.id_o as id_o, o.total as total, o.o_date as datee FROM orders o INNER JOIN user u ON o.id_u=u.id_u ORDER BY o.o_date DESC";
     $stmt_ord = $konekcija->prepare($query_ord);
     $rezultat_ord = $stmt_ord->execute();
     $orders = $stmt_ord->fetchAll();
@@ -90,15 +90,15 @@
 
     }
 
-$q222="SELECT * FROM category";
-$stmt222=$konekcija->prepare($q222);
-$rez222 = $stmt222->execute();
-$dohvati222 = $stmt222->fetchAll();
+// $q222="SELECT * FROM category";
+// $stmt222=$konekcija->prepare($q222);
+// $rez222 = $stmt222->execute();
+// $dohvati222 = $stmt222->fetchAll();
 
 ?>
 <!-- filtracija -->
 
-<form id="formica">
+<!-- <form id="formica">
     <select id="ddlFilter">
     <option value="0">Izaberi kategoriju</option>
     <?php foreach($dohvati222 as $t) {
@@ -107,7 +107,7 @@ $dohvati222 = $stmt222->fetchAll();
     ?>
     </select>
     <input type="button" id="btn222" name="btn222" value="filtriraj">
-</form>
+</form> -->
 
 <!-- statistika pristupa stranicama -->
 

@@ -159,7 +159,7 @@ function ispisiProizvode (pr) {
     for(let p of pr) {
       ispis += `
         <tr class="basketRow">
-        <td class="basketImg"><img src="../../assets/${p.thumbnail}" alt="${p.alt}" style="width:100px; height: 100px"/></td>
+        <td class="basketImg"><img src="../../assets/${p.src}" alt="${p.alt}" style="width:100px; height: 100px"/></td>
         <td>${p.name}</td>
         <td class="basketElementPrice">${p.price}</td>
         <td class="basketElementQuantity" data-id="${p.id}" data-quant="${p.quantity}">${p.quantity}</td>
